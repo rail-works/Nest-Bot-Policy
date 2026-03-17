@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Change this font if you want -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <title>NestTool Bot - Terms of Service</title>
+
+  <style>
+    :root {
+      --bg: #212026;
+      --panel: #2a2931;
+      --panel-2: #31303a;
+      --border: #3c3a45;
+      --text: #ffffff;
+      --muted: #cfcfcf;
+      --accent: #4cc9f0; /* updated NestTool accent */
+      --shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #212026 0%, #1c1b21 100%);
+      color: var(--text);
+      font-family: "Montserrat", Arial, sans-serif;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(33, 32, 38, 0.88);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .topbar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .nav-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nav-title {
+      font-weight: 700;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      border-color: rgba(76, 201, 240, 0.5);
+      background: rgba(76, 201, 240, 0.08);
+    }
+
+    .hero {
+      margin-top: 28px;
+      background: linear-gradient(180deg, var(--panel) 0%, #27262d 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--panel-2);
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .content {
+      background: linear-gradient(180deg, var(--panel-2) 0%, #2d2c35 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    h2 {
+      margin: 28px 0 10px;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    p, li {
+      color: var(--text);
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 0 0 12px 20px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #2a2931 0%, #27262d 100%);
+      transition: 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(76, 201, 240, 0.6);
+      background:
+        linear-gradient(
+          to top,
+          rgba(76, 201, 240, 0.38) 0%,
+          rgba(76, 201, 240, 0.14) 40%,
+          rgba(76, 201, 240, 0.00) 100%
+        ),
+        linear-gradient(180deg, #2a2931 0%, #27262d 100%);
+      box-shadow: 0 8px 22px rgba(76, 201, 240, 0.15);
+    }
+
+    .footer {
+      margin-top: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 8px 0;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .nav-title {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="nav-brand">
+        <div class="nav-logo">
+          <img src="../NestTool.png" alt="NestTool Logo">
+        </div>
+        <div class="nav-title">NestTool Bot Policies</div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="../">Home</a>
+        <a href="./" class="active">Terms</a>
+        <a href="../privacy/">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="brand">
+        <div class="logo">
+          <img src="../NestTool.png" alt="NestTool Logo">
+        </div>
+
+        <div class="brand-text">
+          <h1>Terms of Service</h1>
+          <p class="subtitle">Last updated: 16 March 2026</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>
+          By using the NestTool Discord bot (“Bot”), you agree to these Terms of Service. If you do not agree with these terms, you should not use the Bot.
+        </p>
+
+        <h2>1. Use of the Bot</h2>
+        <p>
+          The Bot is provided to assist with moderation, support systems, server utilities, logging, and community features within Discord servers where it is installed.
+        </p>
+
+        <h2>2. Acceptable Use</h2>
+        <p>
+          You agree not to misuse the Bot, attempt to exploit or disrupt its features, spam commands, abuse ticket or report systems, or use it in any way that violates Discord’s Terms of Service or Community Guidelines.
+        </p>
+
+        <h2>3. Availability</h2>
+        <p>
+          The Bot is provided on an “as is” and “as available” basis. Features may be changed, limited, temporarily disabled, or removed at any time without prior notice.
+        </p>
+
+        <h2>4. Limitation of Liability</h2>
+        <p>
+          NestTool and its operators are not responsible for damages, losses, moderation outcomes, downtime, data loss, interruptions, or unexpected behaviour resulting from use or misuse of the Bot.
+        </p>
+
+        <h2>5. Server Configuration Responsibility</h2>
+        <p>
+          Server owners and administrators are responsible for how they configure and use the Bot, including permissions, logging, moderation actions, and access to ticket or transcript systems.
+        </p>
+
+        <h2>6. Suspension or Termination</h2>
+        <p>
+          We reserve the right to restrict, suspend, or remove access to the Bot for any server or user if abuse, malicious use, or violations of these terms are detected.
+        </p>
+
+        <h2>7. Changes to These Terms</h2>
+        <p>
+          These Terms of Service may be updated at any time. Continued use of the Bot after changes are published constitutes acceptance of the revised terms.
+        </p>
+
+        <h2>8. Contact</h2>
+        <p>
+          If you have questions regarding these Terms of Service, please contact the NestTool team through the appropriate support channels within the community.
+        </p>
+
+        <div class="actions">
+          <a class="button" href="../">← Back to Home</a>
+          <a class="button" href="../privacy/">View Privacy Policy</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © 2026 NestTool • Terms of Service • Hosted via GitHub Pages
+    </div>
+  </main>
+</body>
+</html>
