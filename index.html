@@ -1,1 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Change this font if you want -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <title>NestTool Bot Policies</title>
+
+  <style>
+    :root {
+      --bg: #212026;
+      --panel: #2a2931;
+      --panel-2: #31303a;
+      --border: #3c3a45;
+      --text: #ffffff;
+      --muted: #cfcfcf;
+      --accent: #0AB7F1;
+      --accent-soft: rgba(10, 183, 241, 0.18);
+      --shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #212026 0%, #1c1b21 100%);
+      color: var(--text);
+      font-family: "Montserrat", Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(33, 32, 38, 0.88);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .topbar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .nav-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nav-title {
+      font-weight: 700;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      border-color: rgba(10, 183, 241, 0.5);
+      background: rgba(10, 183, 241, 0.08);
+    }
+
+    .hero {
+      margin-top: 28px;
+      background: linear-gradient(180deg, var(--panel) 0%, #27262d 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--panel-2);
+      flex-shrink: 0;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, var(--panel-2) 0%, #2d2c35 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .intro {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .link-card {
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      background: linear-gradient(180deg, #2a2931 0%, #27262d 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(10, 183, 241, 0.6);
+      background:
+        linear-gradient(
+          to top,
+          rgba(10, 183, 241, 0.40) 0%,
+          rgba(10, 183, 241, 0.16) 38%,
+          rgba(10, 183, 241, 0.00) 100%
+        ),
+        linear-gradient(180deg, #2a2931 0%, #27262d 100%);
+      box-shadow: 0 10px 26px rgba(10, 183, 241, 0.16);
+    }
+
+    .link-card .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .link-card strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .link-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .footer {
+      margin-top: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 8px 0;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+      }
+
+      .nav-title {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="nav-brand">
+        <div class="nav-logo">
+          <img src="NestTool.png" alt="NestTool Logo">
+        </div>
+        <div class="nav-title">NestTool Bot Policies</div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="./">Home</a>
+        <a href="terms/">Terms</a>
+        <a href="privacy/">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="brand">
+        <div class="logo">
+          <img src="NestTool.png" alt="NestTool Logo">
+        </div>
+
+        <div class="brand-text">
+          <h1>NestTool Bot Policies</h1>
+          <p class="subtitle">Official legal and policy pages for the NestTool Discord bot.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <p class="intro">
+          Welcome to the official policy hub for the NestTool Discord bot. Use the sections below to review the current Terms of Service and Privacy Policy used for Discord bot verification and public reference.
+        </p>
+
+        <div class="links">
+          <a class="link-card" href="terms/">
+            <span class="eyebrow">Legal</span>
+            <strong>Terms of Service</strong>
+            <span>Rules, conditions, limitations, and acceptable use of the NestTool Discord bot.</span>
+          </a>
+
+          <a class="link-card" href="privacy/">
+            <span class="eyebrow">Data</span>
+            <strong>Privacy Policy</strong>
+            <span>Details about what the bot may process, retain, and how data is handled.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © 2026 NestTool • Discord Bot Policies • Hosted via GitHub Pages
+    </div>
+  </main>
+</body>
+</html>
